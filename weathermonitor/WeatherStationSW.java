@@ -1,14 +1,10 @@
 package weathermonitor;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
-
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -97,8 +93,7 @@ public class WeatherStationSW implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		
-		if(ae.getActionCommand().equals("Submit")){
-			
+		if(ae.getActionCommand().equals("Submit")){			
 			
 			String t = jtf1.getText();
 			String h = jtf2.getText();
@@ -120,9 +115,7 @@ public class WeatherStationSW implements ActionListener{
 		if(ae.getActionCommand().equals("Statistics"))	{
 			jlabFinal.setText("Statistics");
 			StatisticsDisplay.go();
-		}
-		
-		
+		}		
 				
 		
 	}

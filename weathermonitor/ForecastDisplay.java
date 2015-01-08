@@ -16,16 +16,21 @@ public class ForecastDisplay implements Observer, DisplayElement{
 	private static float currentHumidity = 60.0f;
 	private float lastHumidity;
 	
-	
-	
-	
-	
+	public static float getCurrentPressure() {
+		return currentPressure;
+	}
+
+	public static float getCurrentTemperature() {
+		return currentTemperature;
+	}
+
+	public static float getCurrentHumidity() {
+		return currentHumidity;
+	}
+
 	public ForecastDisplay(Observable observable){
 		observable.addObserver(this);
 	}
-	
-	
-	
 	
 	public void update(Observable observable, Object arg){
 		if (observable instanceof WeatherData) {
@@ -41,6 +46,7 @@ public class ForecastDisplay implements Observer, DisplayElement{
 		display();
 		
 	}
+	
 	public void display(){
 		System.out.println("Forecast : " + "next temperature : " + currentTemperature + "F degrees " 
 				+ "next humidity : " + currentHumidity + " %; " 

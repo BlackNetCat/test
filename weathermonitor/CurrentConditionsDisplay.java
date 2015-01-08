@@ -1,9 +1,15 @@
 package weathermonitor;
 
-import java.awt.FlowLayout;
+
 import java.awt.GridLayout;
 import java.util.Observable;
 import java.util.Observer;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,6 +23,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement{
 	private static float temperature = 0;
 	private static float humidity = 0;
 	private static float pressure = 0;
+	
 	
 	public CurrentConditionsDisplay(Observable observable){
 		this.observable = observable;
@@ -32,6 +39,28 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement{
 	
  		display();
 	}
+	
+	
+	public static float getTemperature() {
+		return temperature;
+	}
+	public static void setTemperature(float temperature) {
+		CurrentConditionsDisplay.temperature = temperature;
+	}
+	
+	public static float getHumidity() {
+		return humidity;
+	}
+	public static void setHumidity(float humidity) {
+		CurrentConditionsDisplay.humidity = humidity;
+	}
+	public static float getPressure() {
+		return pressure;
+	}
+	public static void setPressure(float pressure) {
+		CurrentConditionsDisplay.pressure = pressure;
+	}
+	
 	public void display(){
 		System.out.println("Current conditions: " + " temperature " + temperature + "F degrees; " + 
 	humidity + "% humidity; " + pressure + " Pressure ");
@@ -78,6 +107,8 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement{
 	String pr = Float.toString(pressure);
 	jlabcur3.setText(pr);
 	}
+	
+	
 
 }
 

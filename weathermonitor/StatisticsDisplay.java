@@ -23,8 +23,51 @@ public class StatisticsDisplay implements Observer, DisplayElement{
 	private static float resultPAve;
 	private static float resultPMin;
 	private static float resultPMax;
-
 	
+		
+	public static ArrayList<Float> getCountTemp() {
+		return countTemp;
+	}
+
+	public static float getResultTAve() {
+		return resultTAve;
+	}
+
+	public static float getResultTMin() {
+		return resultTMin;
+	}
+
+	public static float getResultTMax() {
+		return resultTMax;
+	}
+
+	public static float getResultHAve() {
+		return resultHAve;
+	}
+
+	public static float getResultHMin() {
+		return resultHMin;
+	}
+
+	public static float getResultHMax() {
+		return resultHMax;
+	}
+
+	public static float getResultPAve() {
+		return resultPAve;
+	}
+
+
+	public static float getResultPMin() {
+		return resultPMin;
+	}
+
+
+	public static float getResultPMax() {
+		return resultPMax;
+	}
+
+		
 	
 	public StatisticsDisplay(Observable observable) {
 		observable.addObserver(this);
@@ -155,10 +198,7 @@ public class StatisticsDisplay implements Observer, DisplayElement{
 		
 		String srpmax = Float.toString(resultPMax);
 		jrezPreMax.setText(srpmax);
-		
-		
+				
 		}
-
-	
 	
 }
