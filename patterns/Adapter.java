@@ -87,8 +87,4 @@ public class Adapter {
 
 	}
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 86dcc67bb845452e0c1ab6a1f27c73112076169a

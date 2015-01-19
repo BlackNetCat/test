@@ -1,4 +1,4 @@
-package patterns;
+package homeSW;
 
 abstract class Beverage {
 	String description = "Unknown Beverage";
@@ -20,7 +20,7 @@ class Espresso extends Beverage {
 	@Override
 	public double cost() {
 		
-		return 1.99;
+		return 2;
 	}
 	
 }
@@ -34,7 +34,7 @@ class HouseBlend extends Beverage {
 	@Override
 	public double cost() {
 		
-		return .89;
+		return .90;
 	}
 	
 }
@@ -48,7 +48,7 @@ class DarkRoast extends Beverage {
 	@Override
 	public double cost() {
 		
-		return .99;
+		return 1;
 	}
 	
 }
@@ -74,7 +74,7 @@ class Mocha extends CondimentDecorator {
 	}
 	
 	public double cost(){
-		return .20 + beverage.cost();
+		return .2 + beverage.cost();
 	}
 	
 }
@@ -94,7 +94,7 @@ class Milk extends CondimentDecorator {
 	}
 	
 	public double cost() {
-		return .10 + beverage.cost();
+		return .1 + beverage.cost();
 	}
 	
 }
@@ -114,16 +114,16 @@ class Whip extends CondimentDecorator {
 	}
 	
 	public double cost() {
-		return .10 + beverage.cost();
+		return .15 + beverage.cost();
 	}
 	
 }
 
-public class Decorator {
+public class CafeLogic {
 
 	public static void main(String[] args) {
 		
-		Beverage beverage = new Espresso();
+		/*Beverage beverage = new Espresso();
 		System.out.println(beverage.getDescription() + " $ " + beverage.cost()); 
 		
 		Beverage beverage2 = new DarkRoast();
@@ -131,6 +131,18 @@ public class Decorator {
 		beverage2 = new Mocha(beverage2);       // again
 		beverage2 = new Whip(beverage2);        // Decor in object Whip
 		System.out.println(beverage2.getDescription() + " $ " + beverage2.cost()); 
+		*/
+		Beverage est = new Espresso();
+		System.out.println(est.getDescription() + " " + est.cost() + " $");
+		est = new Mocha(est);
+		est = new Milk(est);
+		est = new Whip(est);
+		System.out.println(est.getDescription() + " " + est.cost() + " $");
+		
+		Beverage hbt = new HouseBlend();
+		System.out.println(hbt.getDescription() + " " + hbt.cost() + " $");
+		hbt = new Mocha(hbt);
+		System.out.println(hbt.getDescription() + " " + hbt.cost() + " $");
 		
 		
 		
